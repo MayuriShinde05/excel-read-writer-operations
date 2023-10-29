@@ -3,7 +3,7 @@ To get the input in the applications.properties file and read Excel one-by-one r
 All are configured, like the input file path, output file path, number of sheets, etc.
 
 ### Steps: 
-1) Take code from TFS but use a git clone: https://tfshub.crifnet.com:8443/CRIF/CreditFlow_Delivery/_git/globe-excel-utility
+1) Take code from TFS but use a git clone: https://github.com/MayuriShinde05/excel-read-writer-operations.git
 2) Build projects with Maven.
 3) Set the applications.properties for application. It is present inside the "/src/main/resources/" folder.
 4) Start the application.
