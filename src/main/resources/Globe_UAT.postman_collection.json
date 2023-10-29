@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "ba749018-b097-4486-8c78-e1569b242661",
+		"name": "Globe_UAT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth token API",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "globe-secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "globe-client",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "grant_type",
+						"value": "password",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "default"
+						},
+						{
+							"key": "username",
+							"value": "test",
+							"type": "default",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "test123",
+							"type": "default",
+							"disabled": true
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://globe-uat.crif.com.ph/oauth/token",
+					"protocol": "https",
+					"host": [
+						"globe-uat",
+						"crif",
+						"com",
+						"ph"
+					],
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Orchestrator API",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODMxMjY0NDUsInVzZXJfbmFtZSI6IiIsImp0aSI6ImYxNzQ4YzY1LTIzMWEtNDA3ZS05NDJiLWNhMzNkZjRhMzBmZCIsImNsaWVudF9pZCI6Imdsb2JlLWNsaWVudCIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSIsInRydXN0Il19.wcLphikz91JPWVWXl1SZxBFhehZgomDflSiEfZgUppU",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"individualUserData\": {\r\n        \"channel\": {\r\n            \"dafSource\": \"TPA\"\r\n        },\r\n        \"personaldetail\": {\r\n            \"accountFirstName\": \"sid\",\r\n            \"accountMiddleName\": \"bhagwan\",\r\n            \"accountLastName\": \"panchal\",\r\n            \"mothersFirstName\": \"dur\",\r\n            \"mothersMiddleName\": \"bhagwan\",\r\n            \"mothersLastName\": \"khkhfkj\",\r\n            \"birthday\": \"1997-12-23\",\r\n            \"citizenship\": \"07985\",\r\n            \"emailAddress\": \"hfhdhfhd\",\r\n            \"mobileNumber\": \"58049850\"\r\n        },\r\n        \"alternatePersonalDetails\": {\r\n            \"contactNumber\": \"9874987\",\r\n            \"alternateContactNumber\": \"783559875\"\r\n        },\r\n        \"addbillinfo\": {\r\n            \"billingBuildingName\": \"test\",\r\n            \"billingFloorNumber\": \"7578\",\r\n            \"billingUnitNumber\": \"589588\",\r\n            \"billingStreetNumber\": \"54859\",\r\n            \"billingStreetName\": \"hdfhd\",\r\n            \"billingZipCode\": 6001.0,\r\n            \"billingProvince\": \"Ifugao\",\r\n            \"billingCity\": \"hfdh\",\r\n            \"billingBarangay\": \"hdkhf\",\r\n            \"billingRegion\": \"djkhf\"\r\n        },\r\n        \"custaccinfo\": {\r\n            \"customerType\": \"New\",\r\n            \"tenure\": 9.0,\r\n            \"customerID\": \"abc1\"\r\n        },\r\n        \"planinfo\": {\r\n            \"selectedPlan\": \"myLifestyle Plan 499\",\r\n            \"selectedPlanAmount\": 1500.0,\r\n            \"newProductType\": \"GHP\",\r\n            \"applicationDate\": \"2022-06-23\",\r\n            \"withHandset\": 0.0,\r\n            \"acquiType\": \"Locked in a promo contract without handset\"\r\n        },\r\n        \"eligibilitychk\": {\r\n            \"totalOverDue\": 200.0,\r\n            \"gScore\": 500.0,\r\n            \"cndbResults\": \"N\",\r\n            \"pofcType\": \"hoyf\",\r\n            \"proofOfFinancialCapacity\": \"7558555\",\r\n            \"proofOfFinancialCapacityContentType\": \"fihfoh\"\r\n        },\r\n        \"poidchk\": {\r\n            \"proofOfIdentificationType\": \"hkjfhdkf\",\r\n            \"proofOfIdentificationNumber\": \"66798\",\r\n            \"proofOfIdentification\": \"ggg\",\r\n            \"validIdFront\": \"bkjffhf\",\r\n            \"validIdFrontContentType\": \"hyyr\",\r\n            \"validIdBack\": \"yiuyiu\",\r\n            \"validIdBackContentType\": \"ghghgh\"\r\n        },\r\n        \"civilStatus\": \"Single\",\r\n        \"declaredMonthlyINcome\": 1000.0,\r\n        \"scenario\": \"B\",\r\n        \"occupation\": \"OWNER\",\r\n        \"paymentType\": \"Outright payment\",\r\n        \"territory\": \"SGMA3\",\r\n        \"tpaName\": \"SATS TELECOM SERVICES\"\r\n    },\r\n    \"candidateUserList\": [\r\n        {\r\n            \"channel\": {\r\n                \"dafSource\": \"TPA\"\r\n            },\r\n            \"personaldetail\": {\r\n                \"accountFirstName\": \"sid\",\r\n                \"accountMiddleName\": \"bhagwan\",\r\n                \"accountLastName\": \"panchal\",\r\n                \"mothersFirstName\": \"dur\",\r\n                \"mothersMiddleName\": \"bhagwan\",\r\n                \"mothersLastName\": \"khkhfkj\",\r\n                \"birthday\": \"1997-12-23\",\r\n                \"citizenship\": \"07985\",\r\n                \"emailAddress\": \"hfhdhfhd\",\r\n                \"mobileNumber\": \"58049850\"\r\n            },\r\n            \"alternatePersonalDetails\": {\r\n                \"contactNumber\": \"9874987\",\r\n                \"alternateContactNumber\": \"783559875\"\r\n            },\r\n            \"addbillinfo\": {\r\n                \"billingBuildingName\": \"test\",\r\n                \"billingFloorNumber\": \"7578\",\r\n                \"billingUnitNumber\": \"589588\",\r\n                \"billingStreetNumber\": \"54859\",\r\n                \"billingStreetName\": \"hdfhd\",\r\n                \"billingZipCode\": 6001.0,\r\n                \"billingProvince\": \"Ifugao\",\r\n                \"billingCity\": \"hfdh\",\r\n                \"billingBarangay\": \"hdkhf\",\r\n                \"billingRegion\": \"djkhf\"\r\n            },\r\n            \"paymentdetails\": {\r\n                \"paymentType\": \"Outright payment\"\r\n            },\r\n            \"custaccinfo\": {\r\n                \"customerType\": \"New\",\r\n                \"tenure\": 9.0,\r\n                \"customerID\": \"abc1\"\r\n            },\r\n            \"planinfo\": {\r\n                \"selectedPlan\": \"myLifestyle Plan 499\",\r\n                \"selectedPlanAmount\": 1500.0,\r\n                \"newProductType\": \"XXX\",\r\n                \"applicationDate\": \"2022-06-23\",\r\n                \"withHandset\": 0.0,\r\n                \"acquiType\": \"Locked in a promo contract without handset\"\r\n            },\r\n            \"eligibilitychk\": {\r\n                \"totalOverDue\": 200.0,\r\n                \"ascore\": 720,\r\n                \"gScore\": 500.0,\r\n                \"cndbResults\": \"N\",\r\n                \"pofcType\": \"hoyf\",\r\n                \"proofOfFinancialCapacity\": \"7558555\",\r\n                \"proofOfFinancialCapacityContentType\": \"fihfoh\"\r\n            },\r\n            \"poidchk\": {\r\n                \"proofOfIdentificationType\": \"hkjfhdkf\",\r\n                \"proofOfIdentificationNumber\": \"66798\",\r\n                \"proofOfIdentification\": \"ggg\",\r\n                \"validIdFront\": \"bkjffhf\",\r\n                \"validIdFrontContentType\": \"hyyr\",\r\n                \"validIdBack\": \"yiuyiu\",\r\n                \"validIdBackContentType\": \"ghghgh\"\r\n            },\r\n            \"civilStatus\": \"Single\",\r\n            \"declaredMonthlyINcome\": 1000.0,\r\n            \"scenario\": \"B\",\r\n            \"occupation\": \"OWNER\",\r\n            \"paymentType\": \"Outright payment\",\r\n            \"territory\": \"SGMA3\",\r\n            \"tpaName\": \"SATS TELECOM SERVICES\"\r\n        },\r\n        {\r\n            \"channel\": {\r\n                \"dafSource\": \"TPA\"\r\n            },\r\n            \"personaldetail\": {\r\n                \"accountFirstName\": \"komal\",\r\n                \"accountMiddleName\": \"s\",\r\n                \"accountLastName\": \"bole\",\r\n                \"mothersFirstName\": \"dur\",\r\n                \"mothersMiddleName\": \"bhagwan\",\r\n                \"mothersLastName\": \"khkhfkj\",\r\n                \"birthday\": \"1995-12-23\",\r\n                \"citizenship\": \"07985\",\r\n                \"emailAddress\": \"hfhdhfhd\",\r\n                \"mobileNumber\": \"58049850\"\r\n            },\r\n            \"alternatePersonalDetails\": {\r\n                \"contactNumber\": \"9874987\",\r\n                \"alternateContactNumber\": \"783559875\"\r\n            },\r\n            \"addbillinfo\": {\r\n                \"billingBuildingName\": \"test\",\r\n                \"billingFloorNumber\": \"7578\",\r\n                \"billingUnitNumber\": \"589588\",\r\n                \"billingStreetNumber\": \"54859\",\r\n                \"billingStreetName\": \"hdfhd\",\r\n                \"billingZipCode\": 6001.0,\r\n                \"billingProvince\": \"Ifugao\",\r\n                \"billingCity\": \"hfdh\",\r\n                \"billingBarangay\": \"hdkhf\",\r\n                \"billingRegion\": \"djkhf\"\r\n            },\r\n            \"paymentdetails\": {\r\n                \"paymentType\": \"Outright payment\"\r\n            },\r\n            \"custaccinfo\": {\r\n                \"customerType\": \"New\",\r\n                \"tenure\": 9.0,\r\n                \"customerID\": \"abc1\"\r\n            },\r\n            \"planinfo\": {\r\n                \"selectedPlan\": \"myLifestyle Plan 499\",\r\n                \"selectedPlanAmount\": 1500.0,\r\n                \"newProductType\": \"XXX\",\r\n                \"applicationDate\": \"2022-06-23\",\r\n                \"withHandset\": 0.0,\r\n                \"acquiType\": \"Locked in a promo contract without handset\"\r\n            },\r\n            \"eligibilitychk\": {\r\n                \"totalOverDue\": 200.0,\r\n                \"ascore\": 720,\r\n                \"gScore\": 500.0,\r\n                \"cndbResults\": \"N\",\r\n                \"pofcType\": \"hoyf\",\r\n                \"proofOfFinancialCapacity\": \"7558555\",\r\n                \"proofOfFinancialCapacityContentType\": \"fihfoh\"\r\n            },\r\n            \"poidchk\": {\r\n                \"proofOfIdentificationType\": \"hkjfhdkf\",\r\n                \"proofOfIdentificationNumber\": \"66798\",\r\n                \"proofOfIdentification\": \"ggg\",\r\n                \"validIdFront\": \"bkjffhf\",\r\n                \"validIdFrontContentType\": \"hyyr\",\r\n                \"validIdBack\": \"yiuyiu\",\r\n                \"validIdBackContentType\": \"ghghgh\"\r\n            },\r\n            \"civilStatus\": \"Single\",\r\n            \"declaredMonthlyINcome\": 1000.0,\r\n            \"scenario\": \"B\",\r\n            \"occupation\": \"OWNER\",\r\n            \"paymentType\": \"Outright payment\",\r\n            \"territory\": \"SGMA3\",\r\n            \"tpaName\": \"SATS TELECOM SERVICES\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://globe-uat.crif.com.ph/globe/api/v1/routes",
+					"protocol": "https",
+					"host": [
+						"globe-uat",
+						"crif",
+						"com",
+						"ph"
+					],
+					"path": [
+						"globe",
+						"api",
+						"v1",
+						"routes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "S1_Request(https://globe-s1-uat.crif.com.ph/rs/pub/execute)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODMxMjY0NDUsInVzZXJfbmFtZSI6IiIsImp0aSI6ImYxNzQ4YzY1LTIzMWEtNDA3ZS05NDJiLWNhMzNkZjRhMzBmZCIsImNsaWVudF9pZCI6Imdsb2JlLWNsaWVudCIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSIsInRydXN0Il19.wcLphikz91JPWVWXl1SZxBFhehZgomDflSiEfZgUppU",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"StrategyOneRequest\": {\r\n\t\t\"Header\": {\r\n\t\t\t\"InquiryCode\": \"test\",\r\n\t\t\t\"ProcessCode\": \"Globe_Project\"\r\n\t\t},\r\n\t\t\"Body\": {\r\n\t\t\t\"Application\": {\r\n\t\t\t\t\"Variables\": {\r\n\t\t\t\t\t\"APPPLICATIONDATE\": \"2020-09-07\",\r\n\t\t\t\t\t\"APPLIEDAMOUNT\": 3499.0,\r\n\t\t\t\t\t\"BRAND\": \"XXX\",\r\n\t\t\t\t\t\"WITH_HANDSET_IND\": 0.0,\r\n\t\t\t\t\t\"MAINOFFERNAME\": \"Plan 3499 400Mbps UNLI\",\r\n\t\t\t\t\t\"SALESCHANNEL\": \"TPA\",\r\n\t\t\t\t\t\"SCENARIO\": \"B\",\r\n\t\t\t\t\t\"TERRITORY\": \"METRO DAVAO\",\r\n\t\t\t\t\t\"TPANAME\": \"MARS AGRIVENTURES AND COMMODITIES INC\",\r\n\t\t\t\t\t\"POSTALCODE\": 8000.0\r\n\t\t\t\t},\r\n\t\t\t\t\"Categories\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"Customer\": {\r\n\t\t\t\t\t\t\t\"Variables\": {\r\n\t\t\t\t\t\t\t\t\"MASKEDCUSTOMERID\": \"20017405\",\r\n\t\t\t\t\t\t\t\t\"CLIENTBIRTHDATE\": \"1979-06-08\",\r\n\t\t\t\t\t\t\t\t\"GCASHSCORE\": 0.0,\r\n\t\t\t\t\t\t\t\t\"POID\": \"Passport\"\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}\r\n\t\t\t\t]\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://globe-s1-uat.crif.com.ph/rs/pub/execute",
+					"protocol": "https",
+					"host": [
+						"globe-s1-uat",
+						"crif",
+						"com",
+						"ph"
+					],
+					"path": [
+						"rs",
+						"pub",
+						"execute"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "local_globe_api(/secured)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9091/secured",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"secured"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

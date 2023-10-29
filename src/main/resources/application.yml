@@ -1,0 +1,18 @@
+security:
+  oauth2:
+    resource:
+      filter-order: 3
+
+server:
+  port: 9091
+ 
+com:
+  crif:
+    globe:
+      s1:
+        url: https://globe-s1.crif.com.ph/rs/pub/execute
+      #mock: mock
+      path: F:\\mysetup\\GlobeUAT5k.xlsx
+      noOfSheet: 1
+      responseFile: E:\\Excel\\Globe_UAT_S1_Response.xlsx
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Nzk5MjE2MjMsInVzZXJfbmFtZSI6IiIsImp0aSI6IjY3ODhjZmE5LTRhMTUtNGU4ZC1iOTk5LWNkZjljNmQ3OGZlZCIsImNsaWVudF9pZCI6Imdsb2JlLWNsaWVudCIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSIsInRydXN0Il19.gUxWOO9FoR-x2QlqWCUn51fcyCnA5KEoGEx4y2zSBTE
